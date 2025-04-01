@@ -3,7 +3,7 @@ import requests
 import streamlit as st
 
 st.title("S&P 500 Research Report")
-API_URL = "http://127.0.0.1:8000/report"
+API_URL = "https://sp500-ra-451496260635.us-central1.run.app/report"
 
 def stream_data(mode):
     body = {'mode':mode}
