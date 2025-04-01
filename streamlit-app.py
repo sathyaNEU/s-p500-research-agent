@@ -5,7 +5,7 @@ import streamlit as st
 
 st.title("S&P 500 Research Report")
 API_URL = "https://sp500-ra-451496260635.us-central1.run.app/report"
-# update
+
 def stream_data(mode):
     params = {'mode':mode}
     response = requests.get(API_URL, json=body, stream=True)
@@ -38,6 +38,6 @@ def batch_data(mode):
 
 mode = st.selectbox("Select Mode:", ["Static", "Realtime"], index=0)
 
-if st.button("Stream LLM Response"):
+if st.button("Generate Report"):
     # stream_data()
     batch_data(mode)
