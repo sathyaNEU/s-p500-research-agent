@@ -8,7 +8,7 @@ API_URL = "https://sp500-ra-451496260635.us-central1.run.app/report"
 
 def stream_data(mode):
     params = {'mode':mode}
-    response = requests.get(API_URL, json=body, stream=True)
+    response = requests.get(API_URL, params=params, stream=True)
 
     if response.status_code == 200:
         text_container = st.empty()  # Create a container for updating text
@@ -38,6 +38,6 @@ def batch_data(mode):
 
 mode = st.selectbox("Select Mode:", ["Static", "Realtime"], index=0)
 
-if st.button("Generate Report"):
+if st.button("Stream LLM Response"):
     # stream_data()
     batch_data(mode)
